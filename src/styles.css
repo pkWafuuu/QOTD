@@ -11,3 +11,15 @@
     max-width: 1280px;
     margin: 0 auto;
 }
+
+.flex {
+    display: flex;
+}
+
+.side-bar {
+    width: 25%;
+}
+
+.home {
+    width: 100%;
+}
