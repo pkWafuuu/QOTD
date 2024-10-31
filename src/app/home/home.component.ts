@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { iQuestion } from './question.model';
+import { ApiCallService } from './api-call.service';
 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,11 @@ import { iQuestion } from './question.model';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  questions: iQuestion[];
+  questions: any;
   randomQuestion: iQuestion | undefined;
 
-  constructor(){
+  constructor(private apiSvc: ApiCallService){
+    
     this.questions = [
       {
         id:1,
@@ -30,6 +32,12 @@ export class HomeComponent {
       },
     ]
   }
+
+  // ngOnInit(){
+  //   this.apiSvc.getQuestions().subscribe(questions => {
+  //     this.questions = questions
+  //   })
+  // }
 
   generateRandomQ(){
     const randomIndex = Math.floor(Math.random() * this.questions.length);

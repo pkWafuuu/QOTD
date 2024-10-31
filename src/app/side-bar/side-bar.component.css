@@ -1,3 +1,6 @@
 .side-bar__btn {
     margin-bottom: 8px;
+    color: #333333;
+    font-size: 2rem;
+    padding: 8px;
 }
