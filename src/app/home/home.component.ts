@@ -8,7 +8,7 @@ import { ApiCallService } from './api-call.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  questions: any;
+  questions: iQuestion[];
   randomQuestion: iQuestion | undefined;
 
   constructor(private apiSvc: ApiCallService){

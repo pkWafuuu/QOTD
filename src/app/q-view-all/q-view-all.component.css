@@ -1,0 +1,21 @@
+.qView__container {
+    display: flex;
+    width: 100%;
+}
+
+.questions__container {
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+
+.question__container {
+    width: calc(25%);
+    padding: 24px;
+}
+
+.question__details--container {
+    border: 2px solid #f2f2f2;
+    padding: 10px 0;
+    border-radius: 4px;
+}

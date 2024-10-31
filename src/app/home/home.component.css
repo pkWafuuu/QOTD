@@ -4,10 +4,6 @@
     width: 100%;
 }
 
-.side-bar__btn {
-    margin-bottom: 8px;
-}
-
 .displayQ__container {
     display: flex;
     justify-content: center;

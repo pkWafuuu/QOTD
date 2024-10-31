@@ -7,13 +7,15 @@ import { HomeComponent } from './home/home.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { QOfTheDayComponent } from './q-of-the-day/q-of-the-day.component';
 import { HttpClientModule } from '@angular/common/http';
+import { QViewAllComponent } from './q-view-all/q-view-all.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     SideBarComponent,
-    QOfTheDayComponent
+    QOfTheDayComponent,
+    QViewAllComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,10 @@
     font-family: "Roboto", Courier, monospace;
 }
 
+li {
+    list-style-type: none;
+}
+
 .main-content {
     width: 100%;
 }
