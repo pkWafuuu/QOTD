@@ -7,6 +7,10 @@
     font-family: "Roboto", Courier, monospace;
 }
 
+.main-content {
+    width: 100%;
+}
+
 .row {
     max-width: 1280px;
     margin: 0 auto;
@@ -20,6 +24,3 @@
     width: 25%;
 }
 
-.home {
-    width: 100%;
-}

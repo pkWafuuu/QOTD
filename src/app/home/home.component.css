@@ -1,6 +1,7 @@
 .home__container {
     height: 100vh;
     display: flex;
+    width: 100%;
 }
 
 .side-bar__btn {
