@@ -1,6 +1,8 @@
 .qotd {
-    font-size: 4rem;
+    font-size: 3rem;
     margin-bottom: 24px;
+    text-align: center;
+    margin: 12px 24px;
 }
 
 .q__btn--generate {

@@ -1,7 +1,7 @@
 <h2 class="qotd">
-  <span *ngIf="!question?.question">Can I ask you a question?</span>{{ question?.question }}
+  <span *ngIf="!question">Can I ask you a question?</span>{{ question }}
 </h2>
 <button class="q__btn--generate" (click)="generateClicked()">
-    <span *ngIf="!question?.question">Shoot</span>
-    <span *ngIf="question?.question">Generate another question</span>
+    <span *ngIf="!question">Shoot</span>
+    <span *ngIf="question">Generate another question</span>
 </button>

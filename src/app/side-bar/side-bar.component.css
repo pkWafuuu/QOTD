@@ -4,6 +4,9 @@
     height: 100vh;
     padding: 8px;
     background-color: #f2f2f2;
+    position: sticky;
+    left: 0;
+    top: 0;
 }
 
 .side-bar__btn {

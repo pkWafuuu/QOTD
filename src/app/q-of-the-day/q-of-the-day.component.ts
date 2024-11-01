@@ -8,7 +8,7 @@ import { iQuestion } from '../home/question.model';
 })
 export class QOfTheDayComponent {
   // @Input randomQ
-  @Input() question!: iQuestion | undefined;
+  @Input() question!: any;
 
   @Output() generateQ = new EventEmitter();
 

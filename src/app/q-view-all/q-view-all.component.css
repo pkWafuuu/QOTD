@@ -6,16 +6,20 @@
 .questions__container {
     display: flex;
     text-align: center;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 .question__container {
     width: calc(25%);
-    padding: 24px;
+    padding: 12px;
 }
 
 .question__details--container {
     border: 2px solid #f2f2f2;
-    padding: 10px 0;
+    padding: 10px;
     border-radius: 4px;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }

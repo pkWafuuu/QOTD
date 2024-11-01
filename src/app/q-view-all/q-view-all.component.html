@@ -1,8 +1,8 @@
 <div class="qView__container">
     <ul class="questions__container">
-        <li class="question__container" *ngFor="let question of questions">
+        <li class="question__container" *ngFor="let question of questions.questions">
             <div class="question__details--container">
-                <p class="question">{{ question.question }}</p>
+                <p class="question">{{ question }}</p>
             </div>
         </li>
     </ul>

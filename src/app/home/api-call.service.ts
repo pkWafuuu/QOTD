@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiCallService {
-  url = 'https://qotd-backend.onrender.com';
+  url = 'https://qotd-backend.onrender.com/question/all';
 
   constructor(private http: HttpClient) {}
 
   getQuestions(): Observable<any> {
-    return this.http.get(this.url, { headers: { Accept: "/question/all"}})
+    return this.http.get(this.url)
   }
-}
+} 
