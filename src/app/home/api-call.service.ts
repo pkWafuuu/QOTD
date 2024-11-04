@@ -9,6 +9,8 @@ import { Observable } from 'rxjs';
 export class ApiCallService {
   url = 'https://qotd-backend.onrender.com/question/all';
 
+  questions : any; 
+
   constructor(private http: HttpClient) {}
 
   getQuestions(): Observable<any> {

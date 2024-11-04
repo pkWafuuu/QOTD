@@ -11,34 +11,14 @@ export class HomeComponent {
   questions: any;
   randomQuestion: any;
 
-  constructor(private apiSvc: ApiCallService){
-    
-    // this.questions = [
-    //   {
-    //     id:1,
-    //     question: "WHO ARE YOU",
-    //   },
-    //   {
-    //     id:2,
-    //     question: "WHO ME YOU?",
-    //   },
-    //   {
-    //     id:3,
-    //     question: "YOU WHO?",
-    //   },
-    //   {
-    //     id:4,
-    //     question: "ME YOU WHO?",
-    //   },
-    // ]
-  }
+  constructor(private apiSvc: ApiCallService){}
 
   ngOnInit(){
     this.apiSvc.getQuestions().subscribe(questions => {
       this.questions = questions
-      console.log(this.questions.questions[0])
     })
   }
+
 
   generateRandomQ(){
     const randomIndex = Math.floor(Math.random() * this.questions.questions.length);
