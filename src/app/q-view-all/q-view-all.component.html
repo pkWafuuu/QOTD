@@ -1,9 +1,13 @@
 <div class="qView__container">
-    <h2 class="questionsAll__title">All Questions</h2>
+    <div class="questionsAll__header--container">
+        <h2 class="questionsAll__title">All Questions</h2>
+        <input class="questionsAll__input" type="text" placeholder="Search Question by ID">
+    </div>
     <ul class="questions__container">
-        <li class="question__container" *ngFor="let question of questions?.questions">
+        <li class="question__container" *ngFor="let question of questions">
             <div class="question__details--container">
-                <p class="question">{{ question }}</p>
+                <h2>{{ 'ID : '+ question.id }}</h2>
+                <p class="question">{{ question.question }}</p>
             </div>
         </li>
     </ul>

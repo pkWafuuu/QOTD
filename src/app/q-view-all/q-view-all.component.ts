@@ -8,13 +8,15 @@ import { ApiCallService } from '../home/api-call.service';
   styleUrls: ['./q-view-all.component.css']
 })
 export class QViewAllComponent {
-  questions: any;
+  questions: iQuestion[] = [];
+  
 
   constructor(private apiSvc: ApiCallService){}
 
   ngOnInit(){
     this.apiSvc.getQuestions().subscribe(questions => {
       this.questions = questions
+      console.log(questions)
     })
   }
   

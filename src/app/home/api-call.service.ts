@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { iQuestion } from './question.model';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +13,7 @@ export class ApiCallService {
 
   constructor(private http: HttpClient) {}
 
-  getQuestions(): Observable<any> {
-    return this.http.get(this.url)
+  getQuestions(): Observable<iQuestion[]> {
+    return this.http.get<{ questions: iQuestion[] }>(this.url).pipe(map(response => response.questions));
   }
 } 

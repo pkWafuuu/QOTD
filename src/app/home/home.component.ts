@@ -21,8 +21,8 @@ export class HomeComponent {
 
 
   generateRandomQ(){
-    const randomIndex = Math.floor(Math.random() * this.questions.questions.length);
-    this.randomQuestion = this.questions.questions[randomIndex]
+    const randomIndex = Math.floor(Math.random() * this.questions.length);
+    this.randomQuestion = this.questions[randomIndex].question
   }
 
 }
