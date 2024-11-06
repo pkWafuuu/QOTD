@@ -43,3 +43,8 @@
     flex-direction: column;
     justify-content: center;
 }
+
+.filter__btn {
+    padding: 4px 8px;
+    margin: 4px;
+}

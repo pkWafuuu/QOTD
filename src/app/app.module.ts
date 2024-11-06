@@ -8,6 +8,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { QOfTheDayComponent } from './q-of-the-day/q-of-the-day.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QViewAllComponent } from './q-view-all/q-view-all.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { QViewAllComponent } from './q-view-all/q-view-all.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

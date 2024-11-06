@@ -1,4 +1,5 @@
 export interface iQuestion{
     id: number,
-    question: string
+    category: string,
+    question: string,
 }

@@ -1,14 +1,28 @@
 <div class="qView__container">
-    <div class="questionsAll__header--container">
-        <h2 class="questionsAll__title">All Questions</h2>
-        <input class="questionsAll__input" type="text" placeholder="Search Question by ID">
-    </div>
-    <ul class="questions__container">
-        <li class="question__container" *ngFor="let question of questions">
-            <div class="question__details--container">
-                <h2>{{ 'ID : '+ question.id }}</h2>
-                <p class="question">{{ question.question }}</p>
-            </div>
-        </li>
+  <div class="questionsAll__header--container">
+    <h2 class="questionsAll__title">All Questions</h2>
+    <input
+      class="questionsAll__input"
+      type="text"
+      placeholder="Search Question by ID"
+      [(ngModel)]="searchId"
+      (input)="onSearch()"
+    />
+    <ul class="questions__filter">
+        <button class="filter__btn" (click)="searchCategory('')">All</button>
+        <button class="filter__btn" (click)="searchCategory('personal')">Personal</button>
+        <button class="filter__btn" (click)="searchCategory('fun')">Fun</button>
+        <button class="filter__btn" (click)="searchCategory('career')">Career</button>
+        <button class="filter__btn" (click)="searchCategory('philosophical')">Philosophical</button>
     </ul>
+  </div>
+  <ul class="questions__container">
+    <li class="question__container" *ngFor="let question of questions">
+      <div class="question__details--container">
+        <h2>{{ "ID : " + question.id }}</h2>
+        <h3>{{ "Category: " + question.category }}</h3>
+        <p class="question">{{ question.question }}</p>
+      </div>
+    </li>
+  </ul>
 </div>
