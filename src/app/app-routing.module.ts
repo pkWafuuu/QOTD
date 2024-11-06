@@ -6,6 +6,8 @@ import { QViewAllComponent } from './q-view-all/q-view-all.component';
 const routes: Routes = [
   { path: 'home', component: HomeComponent, title:'QOTD'},
   { path: 'allquestions', component: QViewAllComponent, title:'QOTD'},
+  { path: '', redirectTo: '/home', pathMatch: 'full'}
+
 ];
 
 @NgModule({
