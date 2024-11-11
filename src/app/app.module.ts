@@ -9,6 +9,7 @@ import { QOfTheDayComponent } from './q-of-the-day/q-of-the-day.component';
 import { HttpClientModule } from '@angular/common/http';
 import { QViewAllComponent } from './q-view-all/q-view-all.component';
 import { FormsModule } from '@angular/forms';
+import { QViewComponent } from './q-view-all/q-view/q-view.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     SideBarComponent,
     QOfTheDayComponent,
-    QViewAllComponent
+    QViewAllComponent,
+    QViewComponent
   ],
   imports: [
     BrowserModule,

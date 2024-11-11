@@ -13,6 +13,7 @@ li {
 
 .main-content {
     width: 100%;
+    position: relative;
 }
 
 .row {
