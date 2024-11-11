@@ -9,20 +9,32 @@
       (input)="onSearch()"
     />
     <ul class="questions__filter">
-        <button class="filter__btn" (click)="searchCategory('')">All</button>
-        <button class="filter__btn" (click)="searchCategory('personal')">Personal</button>
-        <button class="filter__btn" (click)="searchCategory('fun')">Fun</button>
-        <button class="filter__btn" (click)="searchCategory('career')">Career</button>
-        <button class="filter__btn" (click)="searchCategory('philosophical')">Philosophical</button>
+      <button class="filter__btn" (click)="searchCategory('')">All</button>
+      <button class="filter__btn" (click)="searchCategory('personal')">
+        Personal
+      </button>
+      <button class="filter__btn" (click)="searchCategory('fun')">Fun</button>
+      <button class="filter__btn" (click)="searchCategory('career')">
+        Career
+      </button>
+      <button class="filter__btn" (click)="searchCategory('philosophical')">
+        Philosophical
+      </button>
     </ul>
   </div>
   <ul class="questions__container">
     <li class="question__container" *ngFor="let question of questions">
-      <div class="question__details--container">
-        <h2>{{ "ID : " + question.id }}</h2>
-        <h3>{{ "Category: " + question.category }}</h3>
+      <div
+        class="question__details--container"
+        (click)="
+          openQuestion(question.id)
+        "
+      >
+        <p class="question__id">{{ "ID: " + question.id }}</p>
+        <h3>{{question.category }}</h3>
         <p class="question">{{ question.question }}</p>
       </div>
     </li>
   </ul>
+  <app-q-view *ngIf="viewOpened" (close)="openQuestion()" [question]="viewQuestion"></app-q-view>
 </div>

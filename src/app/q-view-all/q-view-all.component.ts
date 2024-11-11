@@ -12,6 +12,8 @@ export class QViewAllComponent {
   questions: iQuestion[] = [];
   question: any = [];
   searchId: string = '';
+  viewQuestion: any;
+  viewOpened: boolean = false;
   
 
   constructor(private apiSvc: ApiCallService){}
@@ -50,6 +52,15 @@ export class QViewAllComponent {
     } else {
       const filteredQuestion = this.allQuestions.filter(question => question.category === category)
       this.questions = filteredQuestion;
+    }
+  }
+
+  openQuestion(id?:number){
+    if(id) {
+      this.viewOpened = !this.viewOpened
+      this.viewQuestion = this.allQuestions.find(question => question.id === id)
+    } else {
+      this.viewOpened = !this.viewOpened
     }
   }
   
