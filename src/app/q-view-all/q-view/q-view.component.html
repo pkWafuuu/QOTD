@@ -6,6 +6,6 @@
     <p>{{question.category.toUpperCase() }}</p>
     <label for="question">Question:</label>
     <p>{{question.question}}</p>
-    <button class="question__btn--edit">EDIT</button>
+    <button class="question__btn--edit" (click)="addQuestion(question)">EDIT</button>
   </div>
 </div>
