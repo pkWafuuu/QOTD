@@ -23,18 +23,24 @@
     </ul>
   </div>
   <ul class="questions__container">
-    <li class="question__container" *ngFor="let question of questions">
+    <li
+      class="question__container"
+      *ngFor="let question of questions; let i = index"
+      [ngStyle]="{ 'animation-delay': i * 200 + 'ms' }"
+    >
       <div
         class="question__details--container"
-        (click)="
-          openQuestion(question.id)
-        "
+        (click)="openQuestion(question.id)"
       >
         <p class="question__id">{{ "ID: " + question.id }}</p>
-        <h3>{{question.category }}</h3>
+        <h3>{{ question.category }}</h3>
         <p class="question">{{ question.question }}</p>
       </div>
     </li>
   </ul>
-  <app-q-view *ngIf="viewOpened" (close)="openQuestion()" [question]="viewQuestion"></app-q-view>
+  <app-q-view
+    *ngIf="viewOpened"
+    (close)="openQuestion()"
+    [question]="viewQuestion"
+  ></app-q-view>
 </div>

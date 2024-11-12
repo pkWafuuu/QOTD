@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ApiPutService } from 'src/app/api-put.service';
+import { ApiCallService } from 'src/app/home/api-call.service';
 import { iQuestion } from 'src/app/home/question.model';
 
 @Component({
@@ -15,7 +15,7 @@ export class QViewComponent {
     this.close.emit()
   }
 
-  constructor(private putSvc: ApiPutService){}
+  constructor(private putSvc: ApiCallService){}
 
   addQuestion(question: iQuestion){
     this.putSvc.add(question)

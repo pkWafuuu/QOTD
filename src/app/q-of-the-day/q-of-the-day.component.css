@@ -3,9 +3,11 @@
     margin-bottom: 24px;
     text-align: center;
     margin: 12px 24px;
+    animation: fade-up 800ms;
 }
 
 .q__btn--generate {
     font-size: 1.5rem;
     padding: 8px;
+    animation: fade-up 1200ms;
 }
