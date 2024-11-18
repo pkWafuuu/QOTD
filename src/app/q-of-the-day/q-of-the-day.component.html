@@ -2,6 +2,10 @@
   <span *ngIf="!question">Can I ask you a question?</span>{{ question }}
 </h2>
 <button class="q__btn--generate" (click)="generateClicked()">
-    <span *ngIf="!question">Shoot</span>
-    <span *ngIf="question">Generate another question</span>
+  <span *ngIf="!question">Shoot</span>
+  <span *ngIf="question">Generate another question</span>
 </button>
+<button class="q__btn--add" *ngIf="question" (click)="openAddQuestion()">
+  Create a Question
+</button>
+<app-q-add *ngIf="openAdd" (close)="openAddQuestion()"></app-q-add>

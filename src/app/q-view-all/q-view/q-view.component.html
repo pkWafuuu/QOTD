@@ -1,11 +1,12 @@
 <div class="question__view--container">
   <div class="question__view--details fade-up">
-    <button class="question__view--close" (click)="closeClicked()"> -X- </button>
+    <button class="close" (click)="closeClicked()"> -X- </button>
     <p>{{"ID: " + question.id}}</p>
     <label for="category">Category:</label>
     <p>{{question.category.toUpperCase() }}</p>
     <label for="question">Question:</label>
     <p>{{question.question}}</p>
     <button class="question__btn--edit" (click)="addQuestion(question)">EDIT</button>
+    <button class="question__btn--delete" (click)="deleteQuestion(question)">DELETE</button>
   </div>
 </div>

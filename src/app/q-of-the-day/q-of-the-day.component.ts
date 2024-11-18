@@ -7,12 +7,16 @@ import { iQuestion } from '../home/question.model';
   styleUrls: ['./q-of-the-day.component.css']
 })
 export class QOfTheDayComponent {
-  // @Input randomQ
   @Input() question!: any;
-
   @Output() generateQ = new EventEmitter();
+
+  openAdd: boolean = false;
 
   generateClicked(){
     this.generateQ.emit();
+  }
+
+  openAddQuestion(){
+    this.openAdd = !this.openAdd
   }
 }

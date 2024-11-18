@@ -18,12 +18,6 @@
     position: relative;
 }
 
-.question__view--close {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-}
-
 p {
     margin-bottom: 12px;
 }

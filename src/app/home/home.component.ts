@@ -14,11 +14,11 @@ export class HomeComponent {
   constructor(private apiSvc: ApiCallService){}
 
   ngOnInit(){
-    this.apiSvc.getQuestions().subscribe(questions => {
-      this.questions = questions
+    this.apiSvc.getQuestions().subscribe(question => {
+      this.questions = question
+      console.log(this.questions)
     })
   }
-
 
   generateRandomQ(){
     const randomIndex = Math.floor(Math.random() * this.questions.length);

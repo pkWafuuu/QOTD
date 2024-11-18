@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ApiCallService } from 'src/app/home/api-call.service';
 import { iQuestion } from 'src/app/home/question.model';
+import { ValidationService } from 'src/app/validation.service';
 
 @Component({
   selector: 'app-q-view',
@@ -15,9 +16,23 @@ export class QViewComponent {
     this.close.emit()
   }
 
-  constructor(private putSvc: ApiCallService){}
+  constructor(private callApi: ApiCallService, private validate: ValidationService){}
 
   addQuestion(question: iQuestion){
-    this.putSvc.add(question)
+    this.callApi.add(question)
+  }
+
+  async deleteQuestion(question: iQuestion){
+    try {
+      const isConfirmed = await this.validate.confirm(question  , 'delet');
+      if (isConfirmed) {
+        await this.callApi.delete(question.id!);
+        console.log("Question deleted successfully!");
+      } else {
+        console.log("Validation failed. Cannot proceed.");
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+    }
   }
 }

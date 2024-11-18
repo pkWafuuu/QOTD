@@ -1,0 +1,10 @@
+<div class="question__add--container">
+    <form action="" class="question__form">
+        <label for="category">Category:</label>
+        <input type="text" name="category" [(ngModel)]="questionData.category">
+        <label for="category">Question:</label>
+        <textarea name="questions" [(ngModel)]="questionData.question" id=""></textarea>
+        <button class="question__btn--add" type="submit" (click)="createQuestion(questionData)">Create Question</button>
+        <button class="close" (click)="closeClicked()">-X-</button>
+    </form>
+</div>
