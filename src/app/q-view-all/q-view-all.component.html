@@ -39,8 +39,9 @@
     </li>
   </ul>
   <app-q-view
-    *ngIf="viewOpened"
-    (close)="openQuestion()"
+    *ngIf="viewOpened && viewQuestion"
+    (close)="closeView()"
     [question]="viewQuestion"
+    (reload)="reloadData()"
   ></app-q-view>
 </div>

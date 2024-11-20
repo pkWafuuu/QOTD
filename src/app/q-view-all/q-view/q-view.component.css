@@ -16,8 +16,11 @@
     padding: 32px;
     max-width: 500px;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
-p {
-    margin-bottom: 12px;
+.textarea__edit {
+    width: 300px;
+    max-width: 500px;
 }

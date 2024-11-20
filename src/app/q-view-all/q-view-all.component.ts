@@ -25,10 +25,21 @@ export class QViewAllComponent {
     })
   }
 
+  loadQuestions(): void {
+    this.apiSvc.getQuestions().subscribe(
+      (questions) => {
+        this.allQuestions = questions;
+        this.questions = [...questions];
+      },
+      (error) => {
+        console.error('Error loading questions:', error);
+      }
+    );
+  }
+
   onSearch() {
-    const id = parseInt(this.searchId, 10);  // Convert searchId to a number
+    const id = parseInt(this.searchId, 10); 
     if (isNaN(id)) {
-      // If searchId is not a valid number, reset to all questions
       this.questions = [...this.allQuestions];
     } else {
       this.searchQuestionID(id);
@@ -37,10 +48,8 @@ export class QViewAllComponent {
 
   searchQuestionID(id: number | null) {
     if (id === null || id === undefined) {
-      // If id is null or undefined, reset to all questions
       this.questions = [...this.allQuestions];
     } else {
-      // Otherwise, find the question by ID and set it as the only item in questions array
       const foundQuestion = this.allQuestions.find(question => question.id === id);
       this.questions = foundQuestion ? [foundQuestion] : [];
     }
@@ -62,6 +71,15 @@ export class QViewAllComponent {
     } else {
       this.viewOpened = !this.viewOpened
     }
+  }
+
+  closeView(): void {
+    this.viewOpened = false; 
+  }
+
+  reloadData(): void {
+    this.loadQuestions(); 
+    this.closeView(); 
   }
   
 }

@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { ApiCallService } from '../home/api-call.service';
 import { iQuestion } from '../home/question.model';
 import { ValidationService } from '../validation.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-q-add',
@@ -23,10 +24,11 @@ export class QAddComponent {
 
   async createQuestion(question: iQuestion) {
     try {
-      const isConfirmed = await this.validate.confirm(question, 'creat'); // Wait for confirmation
+      const isConfirmed = await this.validate.confirm(question, 'create'); // Wait for confirmation
       if (isConfirmed) {
-        await this.callApi.add(question);
+        await firstValueFrom(this.callApi.add(question));
         console.log("Question added successfully!");
+        this.closeClicked();
       } else {
         console.log("Validation failed. Cannot proceed.");
       }

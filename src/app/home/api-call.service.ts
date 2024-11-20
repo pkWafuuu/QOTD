@@ -9,7 +9,7 @@ import { ValidationService } from '../validation.service';
   providedIn: 'root',
 })
 export class ApiCallService {
-  url = 'https://qotd-backend.onrender.com/question/all';
+  private baseUrl = 'https://qotd-backend.onrender.com/question'
 
   questions?: any;
   iQuestion?: iQuestion[] = [];
@@ -20,7 +20,7 @@ export class ApiCallService {
     // return this.http
     //   .get<{ questions: iQuestion[] }>(this.url)
     //   .pipe(map((response) => response.questions));
-    return this.http.get<any>(this.url).pipe(
+    return this.http.get<any>(`${this.baseUrl}/all`).pipe(
       // tap(response => console.log('Raw response:', response)),
       map((response) =>
         response.map((item: any) => ({
@@ -37,31 +37,19 @@ export class ApiCallService {
       .set('category', question.category)
       .set('question', question.question);
 
-    this.http
-      .post('https://qotd-backend.onrender.com/question', {}, { params })
-      .subscribe({
-        next: (data) => {
-          console.log('Response received:', data);
-          Swal.fire('Question created successfully!');
-        },
-        error: (error) => {
-          Swal.fire('Error creating question');
-          console.error('There was an error!!', error);
-        },
-      });
+    return this.http.post(`${this.baseUrl}`, {}, { params })
   }
 
-  delete(id: number) {
-    this.http
-      .delete(`https://qotd-backend.onrender.com/question/${id}`)
-      .subscribe({
-        next: () => {
-          console.log(`Object with ID ${id} deleted successfully`);
-        },
-        error: (error) => {
-          Swal.fire('Error', 'Failed to delete the object', 'error');
-          console.error('There was an error deleting the object:', error);
-        },
-      });
+  edit(question: iQuestion) {
+    const params = new HttpParams()
+      .set('question', question.question)
+
+    return this.http.put(`${this.baseUrl}/${question.id}`, {}, { params })
+  }
+
+  delete(id: number): Observable<any>{
+    return this.http
+      .delete(`${this.baseUrl}/${id}`);
+  
   }
 }

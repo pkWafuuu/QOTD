@@ -2,11 +2,15 @@
   <div class="question__view--details fade-up">
     <button class="close" (click)="closeClicked()"> -X- </button>
     <p>{{"ID: " + question.id}}</p>
-    <label for="category">Category:</label>
-    <p>{{question.category.toUpperCase() }}</p>
-    <label for="question">Question:</label>
-    <p>{{question.question}}</p>
-    <button class="question__btn--edit" (click)="addQuestion(question)">EDIT</button>
+    <div class="form__divider">
+      <label for="category">Category:</label>
+      <input type="text" [(ngModel)]="question.category" />
+    </div>
+    <div class="form__divider">
+      <label for="question">Question:</label>
+      <textarea class="textarea__edit" type="text" [(ngModel)]="question.question" ></textarea>
+    </div>
+    <button class="question__btn--edit" (click)="updateQuestion(question)">EDIT</button>
     <button class="question__btn--delete" (click)="deleteQuestion(question)">DELETE</button>
   </div>
 </div>

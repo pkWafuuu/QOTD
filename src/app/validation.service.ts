@@ -59,8 +59,8 @@ export class ValidationService {
     }).then((result) => {
       if (result.isConfirmed) {
         Swal.fire({
-          title: `${type}ed!`,
-          text: `Your file has been ${type}ed.`,
+          title: `${type}d!`,
+          text: `Your file has been ${type}d.`,
           icon: 'success',
         });
         return true; // Explicitly return true if confirmed
