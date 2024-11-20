@@ -21,10 +21,9 @@ export class ApiCallService {
     //   .get<{ questions: iQuestion[] }>(this.url)
     //   .pipe(map((response) => response.questions));
     return this.http.get<any>(`${this.baseUrl}/all`).pipe(
-      // tap(response => console.log('Raw response:', response)),
       map((response) =>
         response.map((item: any) => ({
-          id: item.qid, // Map `qid` to `id`
+          id: item.qid,
           category: item.category,
           question: item.question,
         }))

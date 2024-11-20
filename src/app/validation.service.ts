@@ -10,43 +10,6 @@ export class ValidationService {
 
   constructor() {}
 
-  // confirm(data: iQuestion){
-  //   const swalWithBootstrapButtons = Swal.mixin({
-  //     customClass: {
-  //       confirmButton: "btn btn-success",
-  //       cancelButton: "btn btn-danger"
-  //     },
-  //     buttonsStyling: false
-  //   });
-  //   swalWithBootstrapButtons.fire({
-  //     title: "Do you want to proceed?",
-  //     text: "You won't be able to revert this!",
-  //     icon: "warning",
-  //     showCancelButton: true,
-  //     confirmButtonText: "Yes, delete it!",
-  //     cancelButtonText: "No, cancel!",
-  //     reverseButtons: true
-  //   }).then((result) => {
-  //     if (result.isConfirmed) {
-  //       swalWithBootstrapButtons.fire({
-  //         title: "Deleted!",
-  //         text: "Your file has been deleted.",
-  //         icon: "success"
-  //       });
-  //       this.close.emit();
-  //     } else if (
-  //       /* Read more about handling dismissals below */
-  //       result.dismiss === Swal.DismissReason.cancel
-  //     ) {
-  //       swalWithBootstrapButtons.fire({
-  //         title: "Cancelled",
-  //         text: "Your imaginary file is safe :)",
-  //         icon: "error"
-  //       });
-  //     }
-  //   });
-  // }
-
   confirm(data?: iQuestion, type?: string): Promise<boolean> {
     return Swal.fire({
       title: 'Are you sure?',
@@ -63,9 +26,9 @@ export class ValidationService {
           text: `Your file has been ${type}d.`,
           icon: 'success',
         });
-        return true; // Explicitly return true if confirmed
+        return true;
       } else {
-        return false; // Explicitly return false if not confirmed
+        return false;
       }
     });
   }
