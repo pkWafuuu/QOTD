@@ -33,4 +33,27 @@ export class ValidationService {
     });
   }
 
+  confirmEdit(data: iQuestion): Promise<boolean> {
+    return Swal.fire({
+      title: 'You made changes',
+      text: "Do you want to proceed?",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: `Yes, edit it!`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: `Edited!`,
+          text: `Your file has been edited.`,
+          icon: 'success',
+        });
+        return true;
+      } else {
+        return false;
+      }
+    });
+  }
+
 }
