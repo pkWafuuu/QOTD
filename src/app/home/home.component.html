@@ -1,7 +1,9 @@
 <div class="home__container">
+  <div class="spinner" *ngIf="isLoading"></div>
   <app-q-of-the-day
     class="displayQ__container"
     (generateQ)="generateRandomQ()"
     [question]="randomQuestion"
+    *ngIf="!isLoading"
   ></app-q-of-the-day>
 </div>

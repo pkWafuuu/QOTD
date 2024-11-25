@@ -17,9 +17,6 @@ export class ApiCallService {
   constructor(private http: HttpClient, private validate: ValidationService) {}
 
   getQuestions(): Observable<iQuestion[]> {
-    // return this.http
-    //   .get<{ questions: iQuestion[] }>(this.url)
-    //   .pipe(map((response) => response.questions));
     return this.http.get<any>(`${this.baseUrl}/all`).pipe(
       map((response) =>
         response.map((item: any) => ({
