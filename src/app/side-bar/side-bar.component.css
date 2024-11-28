@@ -15,3 +15,19 @@
     font-size: 2rem;
     padding: 8px;
 }
+
+.side-bar__logo--list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo__img--github{
+    width: 24px;
+    height: 24px;
+    transition: all 200ms ease-in-out
+}
+
+.logo__img--github:hover {
+    transform: scale(1.2);
+}
